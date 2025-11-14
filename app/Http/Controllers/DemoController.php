@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 
 class DemoController extends Controller
 {
-    function demoAction(Request $request):array{
-        $name = $request->name;
-        $age = $request->age;
-        $pin = $request->header('pin');
-        $city = $request->input('city');
-        $postcode = $request->input('postcode');
-
+    function demoAction(Request $request){
+        $photoFile = $request->file('photo');
+        $fileSize = filesize($photoFile);
+        $fileType = filetype($photoFile);
+        $fileOriginalName = $photoFile->getClientOriginalName();
+        $fileTeamName = $photoFile->getFilename();
+        $fileExtension = $photoFile->extension();
         return array(
-            "name" => $name,
-            "age" => $age,
-            "pin" => $pin,
-            "city" => $city,
-            "postcode" => $postcode
-        );
+            'file_size' => $fileSize,
+            'file_type' => $fileType,
+            'original_name' => $fileOriginalName,
+            'temp_name' => $fileTeamName,
+            'extension' => $fileExtension
+        ) ;
     }
 }
