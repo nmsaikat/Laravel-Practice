@@ -15,9 +15,7 @@ use App\Http\Controllers\DemoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
-Route::post('/hello', [DemoController::class, 'demoAction']);
 
 

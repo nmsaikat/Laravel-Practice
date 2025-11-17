@@ -7,13 +7,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DemoController extends Controller
 {
-    function demoAction(Request $request):JsonResponse{
-        $code = 300;
-        $content = array(
-            'city' => 'New York',
-            'postcode' => '10001',
-        );
-
-        return response()->json($content, $code);
+    function demoAction(Request $request){
     }
 }
