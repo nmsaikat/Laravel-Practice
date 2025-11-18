@@ -9,4 +9,8 @@ class DemoController extends Controller
 {
     function demoAction(Request $request){
     }
+
+    function demo(){
+        
+    }
 }
