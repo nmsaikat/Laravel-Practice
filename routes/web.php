@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/demo', [DemoController::class, 'demo']);
+Route::get('/demo/{num1}/{num2}', [DemoController::class, 'demo']);
 
 
