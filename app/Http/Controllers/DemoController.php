@@ -16,4 +16,10 @@ class DemoController extends Controller
     function demoaction2() {
         return "Hello2";
     }
+    function demoaction3() {
+        return "Hello3";
+    }
+    function demoaction4() {
+        return "Hello4";
+    }
 }

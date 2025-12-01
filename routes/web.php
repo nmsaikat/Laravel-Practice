@@ -20,9 +20,16 @@ Route::get('/', function () {
 });
 
 // Route::get('/demo/{num1}/{num2}', [DemoController::class, 'demo']);
-
+/*
 Route::get('/hello1/{key}', [DemoController::class, 'demoaction1'])->middleware([DemoMiddleware::class]);
+Route::get('/hello2/{key}', [DemoController::class, 'demoaction2'])->middleware([DemoMiddleware::class]);
+Route::get('/hello3/{key}', [DemoController::class, 'demoaction3'])->middleware([DemoMiddleware::class]);
+Route::get('/hello4/{key}', [DemoController::class, 'demoaction4'])->middleware([DemoMiddleware::class]);
+*/
 
-Route::get('/hello2', [DemoController::class, 'demoaction2']);
-
-
+Route::middleware(['demo'])->group(function(){
+    Route::get('/hello1/{key}', [DemoController::class, 'demoaction1']);
+    Route::get('/hello2/{key}', [DemoController::class, 'demoaction2']);
+    Route::get('/hello3/{key}', [DemoController::class, 'demoaction3']);
+    Route::get('/hello4/{key}', [DemoController::class, 'demoaction4']);
+});

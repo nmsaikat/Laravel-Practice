@@ -20,7 +20,7 @@ class DemoMiddleware
             return $next($request);
         }
         else {
-            return redirect('/hello2');
+            return response()->json('unauthorized', 401);
         }
     }
 }
