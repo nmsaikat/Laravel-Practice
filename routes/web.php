@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 // Route::get('/demo/{num1}/{num2}', [DemoController::class, 'demo']);
 
-Route::get('/hello', [DemoController::class, 'Demoaction'])->middleware([DemoMiddleware::class]);
+Route::get('/hello1/{key}', [DemoController::class, 'demoaction1'])->middleware([DemoMiddleware::class]);
+
+Route::get('/hello2', [DemoController::class, 'demoaction2']);
 
 
