@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
+use App\Http\Middleware\DemoMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/demo/{num1}/{num2}', [DemoController::class, 'demo']);
+// Route::get('/demo/{num1}/{num2}', [DemoController::class, 'demo']);
+
+Route::get('/hello', [DemoController::class, 'Demoaction'])->middleware([DemoMiddleware::class]);
 
 

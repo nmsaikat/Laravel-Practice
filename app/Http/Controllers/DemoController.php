@@ -9,12 +9,7 @@ use Illuminate\Support\Facades\Log;
 class DemoController extends Controller
 {
 
-    function demo(request $request):int{
-        $num1 = $request -> num1;
-        $num2 = $request -> num2;
-        $sum = $num1 + $num2;
-
-        log::emergency($sum);
-        return $sum;
+    function demoaction() {
+        return "Hello";
     }
 }
