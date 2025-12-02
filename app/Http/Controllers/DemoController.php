@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Log;
 class DemoController extends Controller
 {
 
-    function demoaction(request $request):array {
-        return $request->header();
+    function demoaction(request $request) {
+        return 'Hello from Rate Limiting';
     }
    
 }
